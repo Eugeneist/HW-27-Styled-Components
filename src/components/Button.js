@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styled from "styled-components";
 
 const StyledButton = styled.button`
@@ -81,6 +82,15 @@ const Button = ({ children, color, size, disabled, background, border }) => {
     }
 
     return <StyledButton size={size} color={color} background={background} border={border} disabled={disabled}>{children}</StyledButton>;
+}
+
+Button.propTypes = {
+    children: PropTypes.node,
+    color: PropTypes.string,
+    size: PropTypes.string,
+    disabled: PropTypes.bool,
+    background: PropTypes.string,
+    border: PropTypes.string,
 }
 
 export default Button;

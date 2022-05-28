@@ -1,9 +1,15 @@
 import './App.css';
+import { useState } from 'react';
 import Button from "./components/Button";
+import Alert from './components/Alert';
 
 
 
 function App() {
+
+  const [isOpenAlert, setOpenAlert] = useState(false);
+  const handleOpen = () => setOpenAlert(true);
+  const handleClose = () => setOpenAlert(false);
   return (
     <div className="App">
       Default styled:
@@ -20,6 +26,15 @@ function App() {
       <Button color="primary" disabled>Click</Button>
       Primary large:
       <Button color="primary" size="large">Click</Button>
+
+      <>
+        Компонент Alert:
+        <button onClick={handleOpen}>Open alert</button>
+
+        {isOpenAlert && <Alert color="primary" onClose={handleClose}>Some text</Alert>}
+        {isOpenAlert && <Alert color="warning" onClose={handleClose}>Some text</Alert>}
+        {isOpenAlert && <Alert color="error" onClose={handleClose}>Some text</Alert>}
+      </>
 
     </div>
   );
