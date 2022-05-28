@@ -12,8 +12,6 @@ function App() {
   const handleClose = () => setOpenAlert(false);
   return (
     <div className="App">
-      Default styled:
-      <Button border="3px solid black" background="red">Click</Button>
       Secondary:
       <Button color="secondary">Click</Button>
       Secondary disabled:

@@ -23,11 +23,6 @@ const StyledAlert = styled.div`
                 background: #EB5757;
                 color:#1513A0;
             `
-        default:
-            return `
-                background: #605DEC;
-                color:#fff;
-            `
     }
 }};
 `;
@@ -71,7 +66,7 @@ const Alert = ({children, color, onClose}) => {
 
 Alert.propTypes = {
     children: PropTypes.node,
-    color: PropTypes.string.isRequired,
+    color: PropTypes.oneOf(['primary', 'warning', 'error']).isRequired,
     onClose: PropTypes.func.isRequired,
 }
 
